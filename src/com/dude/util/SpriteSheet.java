@@ -10,7 +10,12 @@ public class SpriteSheet {
 		this.sprite = ss;
 	}
 	
-	public BufferedImage grabImage(int col, int row, int width, int height) {
+	public BufferedImage grabCharacterImage(int col, int row, int width, int height) {
+		BufferedImage img = sprite.getSubimage((row * 96) - 96, (col * 96) - 96, width, height);
+		return img;
+	}
+	
+	public BufferedImage grabEnemyImage(int col, int row, int width, int height) {
 		BufferedImage img = sprite.getSubimage((row * 96) - 96, (col * 96) - 96, width, height);
 		return img;
 	}

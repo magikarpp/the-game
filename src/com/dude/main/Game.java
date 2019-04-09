@@ -38,18 +38,28 @@ public class Game extends Canvas implements Runnable{
   public STATE gameState = STATE.Menu;
   
   public static BufferedImage sprite_archor;
+  public static BufferedImage sprite_priest;
+  public static BufferedImage sprite_warrior;
+  public static BufferedImage sprite_enemy_blue;
+  public static BufferedImage sprite_enemy_green;
+  public static BufferedImage sprite_enemy_red;
 
   public Game(){
+    BufferedImageLoader loader = new BufferedImageLoader();
+    sprite_archor = loader.loadImage("/Characters/Character_Hero_Archor.png");
+    sprite_priest = loader.loadImage("/Characters/Character_Hero_Priest.png");
+    sprite_warrior = loader.loadImage("/Characters/Character_Hero_Warrior.png");
+    
+    sprite_enemy_blue = loader.loadImage("/Enemies/Character_Monster_Slime_Blue.png");
+    sprite_enemy_green = loader.loadImage("/Enemies/Character_Monster_Slime_Green.png");
+    sprite_enemy_red = loader.loadImage("/Enemies/Character_Monster_Slime_Red.png");
+    
     handler = new Handler();
     menu = new Menu(this, handler);
     this.addKeyListener(new KeyInput(handler));
     this.addMouseListener(menu);
 
     new Window(width, height, "A New Game!", this);
-    
-    BufferedImageLoader loader = new BufferedImageLoader();
-    
-    sprite_archor = loader.loadImage("/Characters/Character_Hero_Archor.png");
 
     hud = new HUD(this, handler);
     spawn = new Spawn(handler, hud, this);
