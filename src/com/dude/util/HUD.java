@@ -28,7 +28,7 @@ public class HUD {
 
     greenVal = health * 2;
 
-    score++;
+//    score++;
 
     isDead();
   }

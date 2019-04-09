@@ -4,7 +4,9 @@ import java.awt.Canvas;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.image.BufferStrategy;
+import java.awt.image.BufferedImage;
 
+import com.dude.util.BufferedImageLoader;
 import com.dude.util.HUD;
 import com.dude.util.Handler;
 import com.dude.util.KeyInput;
@@ -15,7 +17,7 @@ public class Game extends Canvas implements Runnable{
 
   private static final long serialVersionUID = 00002L;
 
-  public static final int width = 640, height = width / 12 * 9;
+  public static final int width = 960, height = width / 12 * 9;
 
   private Thread thread;
   private boolean running = false;
@@ -34,6 +36,8 @@ public class Game extends Canvas implements Runnable{
   };
 
   public STATE gameState = STATE.Menu;
+  
+  public static BufferedImage sprite_archor;
 
   public Game(){
     handler = new Handler();
@@ -42,6 +46,10 @@ public class Game extends Canvas implements Runnable{
     this.addMouseListener(menu);
 
     new Window(width, height, "A New Game!", this);
+    
+    BufferedImageLoader loader = new BufferedImageLoader();
+    
+    sprite_archor = loader.loadImage("/Characters/Character_Hero_Archor.png");
 
     hud = new HUD(this, handler);
     spawn = new Spawn(handler, hud, this);
