@@ -1,6 +1,5 @@
 package com.dude.objects;
 
-import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Rectangle;
 import java.awt.image.BufferedImage;
@@ -21,7 +20,7 @@ public class Player extends GameObject {
     
     SpriteSheet ss = new SpriteSheet(Game.sprite_archor);
     
-    player_image = ss.grabImage(1, 1, 96, 96);
+    player_image = ss.grabCharacterImage(3, 4, 96, 96);
   }
 
   public Rectangle getBounds(){
