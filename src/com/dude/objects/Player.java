@@ -1,7 +1,6 @@
 package com.dude.objects;
 
-import java.awt.Color;
-import java.awt.Graphics;
+import java.awt.Graphics2D;
 import java.awt.Rectangle;
 import java.awt.image.BufferedImage;
 
@@ -47,9 +46,9 @@ public class Player extends GameObject {
 
     }
   }
-
+  
   @Override
-  public void render(Graphics g){
+  public void render(Graphics2D g){
 //	g.setColor(Color.white);
 //	g.fillRect((int)x + 20, (int)y, 55, 100);
 	g.drawImage(player_image, (int)x, (int)y, null);

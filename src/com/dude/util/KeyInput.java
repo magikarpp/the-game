@@ -74,18 +74,18 @@ public class KeyInput extends KeyAdapter {
           }
           if(key == KeyEvent.VK_A || key == KeyEvent.VK_LEFT) {
         	  lP = false;
-        	  if(lP) {
-        		  tempObject.setVelY(5);
+        	  if(rP) {
+        		  tempObject.setVelX(5);
         	  } else {
-        		  tempObject.setVelY(0);
+        		  tempObject.setVelX(0);
         	  }
           }
           if(key == KeyEvent.VK_D || key == KeyEvent.VK_RIGHT) {
         	  rP = false;
-        	  if(rP) {
-        		  tempObject.setVelY(-5);
+        	  if(lP) {
+        		  tempObject.setVelX(-5);
         	  } else {
-        		  tempObject.setVelY(0);
+        		  tempObject.setVelX(0);
         	  }
           }
       }

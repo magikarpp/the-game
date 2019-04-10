@@ -1,6 +1,6 @@
 package com.dude.util;
 
-import java.awt.Graphics;
+import java.awt.Graphics2D;
 import java.util.LinkedList;
 
 import com.dude.objects.GameObject;
@@ -25,7 +25,7 @@ public class Handler {
     }
   }
 
-  public void render(Graphics g){
+  public void render(Graphics2D g){
     for(int i = 0; i < object.size(); i++){
       GameObject tempObject = object.get(i);
 
