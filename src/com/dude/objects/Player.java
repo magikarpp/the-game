@@ -13,6 +13,7 @@ public class Player extends GameObject {
 
   private Handler handler;
   
+  private Integer health;
   private SpriteSheet ss;
   private BufferedImage player_image;
 
@@ -49,8 +50,8 @@ public class Player extends GameObject {
 
   @Override
   public void render(Graphics g){
-	g.setColor(Color.white);
-	g.fillRect((int)x + 20, (int)y, 55, 100);
+//	g.setColor(Color.white);
+//	g.fillRect((int)x + 20, (int)y, 55, 100);
 	g.drawImage(player_image, (int)x, (int)y, null);
   }
 
