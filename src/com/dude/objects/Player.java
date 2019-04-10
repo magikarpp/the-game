@@ -1,5 +1,6 @@
 package com.dude.objects;
 
+import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Rectangle;
 import java.awt.image.BufferedImage;
@@ -12,19 +13,20 @@ public class Player extends GameObject {
 
   private Handler handler;
   
+  private SpriteSheet ss;
   private BufferedImage player_image;
 
-  public Player(float x, float y, ID id, Handler handler){
+  public Player(float x, float y, ID id, BufferedImage player_image, Handler handler){
     super(x, y, id);
     this.handler = handler;
     
-    SpriteSheet ss = new SpriteSheet(Game.sprite_archor);
-    
-    player_image = ss.grabCharacterImage(3, 4, 96, 96);
+    this.ss = new SpriteSheet(player_image);
+ 
+    this.player_image = ss.grabCharacterImage(0, 2, 100, 100);
   }
 
   public Rectangle getBounds(){
-    return new Rectangle((int)x, (int)y, 96, 96);
+    return new Rectangle((int)x + 20, (int)y, 55, 100);
   }
 
   @Override
@@ -47,9 +49,9 @@ public class Player extends GameObject {
 
   @Override
   public void render(Graphics g){
-//    g.setColor(Color.white);
-//    g.fillRect((int)x, (int)y, 32, 32);
-	  g.drawImage(player_image, (int)x, (int)y, null);
+	g.setColor(Color.white);
+	g.fillRect((int)x + 20, (int)y, 55, 100);
+	g.drawImage(player_image, (int)x, (int)y, null);
   }
 
 

@@ -31,7 +31,7 @@ public class Menu extends MouseAdapter{
       if(mouseOver(mx, my, 320-100, 240-100, 200, 64)){
         game.gameState = Game.STATE.Game;
 
-        handler.addObject(new Player(320-32, 240-32, ID.Player, handler));
+        handler.addObject(new Player(320-32, 240-32, ID.Player, Game.sprite_archor, handler));
 
       }
       // Shoot Things
