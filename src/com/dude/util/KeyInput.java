@@ -45,7 +45,6 @@ public class KeyInput extends KeyAdapter {
         	  tempObject.setVelX(5);
           }
       }
-
     }
   }
 
@@ -89,7 +88,6 @@ public class KeyInput extends KeyAdapter {
         	  }
           }
       }
-
     }
   }
 
