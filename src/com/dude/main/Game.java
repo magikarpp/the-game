@@ -2,7 +2,7 @@ package com.dude.main;
 
 import java.awt.Canvas;
 import java.awt.Color;
-import java.awt.Graphics;
+import java.awt.Graphics2D;
 import java.awt.image.BufferStrategy;
 import java.awt.image.BufferedImage;
 
@@ -132,7 +132,7 @@ public class Game extends Canvas implements Runnable{
       return;
     }
 
-    Graphics g = bs.getDrawGraphics();
+    Graphics2D g = (Graphics2D) bs.getDrawGraphics();
 
     g.setColor(Color.black);
     g.fillRect(0, 0, width, height);
